@@ -28,11 +28,11 @@ def get_hospitales(db: Session, skip: int = 0, limit: int = 100):
     return db.query(models.Hospital).offset(skip).limit(limit).all()
 
 def get_hospitales_by_localidad(db: Session, localidad_id, skip: int = 0, limit: int = 100):
-    return db.query(models.Hospital).filter(models.Hospital.Localidades_idlocalidad == localidad_id).offset(skip).limit(limit).all()
+    return db.query(models.Hospital).filter(models.Hospital.localidades_idlocalidad == localidad_id).offset(skip).limit(limit).all()
 
 
 def create_localidad_hospital(db: Session, hospital: schemas.HospitalCreate, localidad_id: int):
-    db_hospital = models.Hospital(**hospital.dict(), Localidades_idlocalidad=localidad_id)
+    db_hospital = models.Hospital(**hospital.dict(), localidades_idlocalidad=localidad_id)
     db.add(db_hospital)
     db.commit()
     db.refresh(db_hospital)
