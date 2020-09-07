@@ -2,11 +2,15 @@
 
 ## First install all required libraries
 
+Tenga presente que se debe trabajar con Python 3. Tenga presente con linux y windows las rutas cambian \ en windows es / en linux 
+
 ```bash
 pip install -r requirements.txt
 ```
 
 ## create database
+
+Tenga presente que debe cambiar el nombre de  usuario de la contraseña de la bd antes de ejecutarlo.
 
 ```bash
 python db_creator.py
