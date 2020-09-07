@@ -15,7 +15,7 @@ class HospitalCreate(HospitalBase):
 
 class Hospital(HospitalBase):
     idHospital: int
-    Localidades_idlocalidad: int
+    localidades_idlocalidad: int
 
     class Config:
         orm_mode = True
