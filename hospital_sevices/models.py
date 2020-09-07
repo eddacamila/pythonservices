@@ -20,6 +20,6 @@ class Hospital(Base):
     nombre = Column(String(255), index=True)
     tel = Column(String(255), index=True)
     direccion = Column(String(255), index=True)
-    Localidades_idlocalidad = Column(Integer, ForeignKey("localidades.idlocalidad"))
+    localidades_idlocalidad = Column(Integer, ForeignKey("localidades.idlocalidad"))
 
     owner = relationship("Localidad", back_populates="hospitales")
