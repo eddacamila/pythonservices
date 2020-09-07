@@ -1,3 +1,8 @@
+# Recordando qué es SOA
+El código de la función es INDEPENDIENTE de la forma en que se resuelve la integración.
+La función puede estar hecha en cualquier lenguaje de programación y residir en cualquier tipo de plataforma
+tecnológica.
+Una arquitectura SOA está formada por tres partes: un proveedor, un intermediario y un cliente que no presentan NINGUN ACOPLAMIENTO entre ellos. 
 # sevices for hospitals and localities
 
 ## First install all required libraries
@@ -33,3 +38,5 @@ uvicorn main:app --reload
 ```
 
 ## and go to [Documentation API]('http://127.0.0.1:8000/docs')
+
+
