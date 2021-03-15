@@ -22,12 +22,12 @@ def get_db():
         db.close()
 
 
-# @app.post("/localidades/", response_model=schemas.Localidad)
-# def create_localidad(localidad: schemas.LocalidadCreate, db: Session = Depends(get_db)):
-#     db_localidad = crud.get_localidad_by_nombre(db, nombre=localidad.nomloc)
-#     if db_localidad:
-#         raise HTTPException(status_code=400, detail="Nombre already registered")
-#     return crud.create_localidad(db=db, localidad=localidad)
+@app.post("/localidades/", response_model=schemas.Localidad)
+def create_localidad(localidad: schemas.LocalidadCreate, db: Session = Depends(get_db)):
+    db_localidad = crud.get_localidad_by_nombre(db, nombre=localidad.nomloc)
+    if db_localidad:
+        raise HTTPException(status_code=400, detail="Nombre already registered")
+    return crud.create_localidad(db=db, localidad=localidad)
 
 
 @app.get("/localidades/", response_model=List[schemas.Localidad])
@@ -44,11 +44,11 @@ def read_localidad(localidad_id: int, db: Session = Depends(get_db)):
     return db_localidad
 
 
-# @app.post("/localidades/{localidad_id}/hospitales/", response_model=schemas.Hospital)
-# def create_hospital_for_localidad(
-#     localidad_id: int, hospital: schemas.HospitalCreate, db: Session = Depends(get_db)
-#     ):
-#     return crud.create_localidad_hospital(db=db, hospital=hospital, localidad_id=localidad_id)
+@app.post("/localidades/{localidad_id}/hospitales/", response_model=schemas.Hospital)
+def create_hospital_for_localidad(
+    localidad_id: int, hospital: schemas.HospitalCreate, db: Session = Depends(get_db)
+    ):
+    return crud.create_localidad_hospital(db=db, hospital=hospital, localidad_id=localidad_id)
 
 
 @app.get("/hospitales/", response_model=List[schemas.Hospital])

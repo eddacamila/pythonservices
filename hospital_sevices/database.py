@@ -6,9 +6,9 @@ USER = 'root'
 PASSWORD = '123456'
 DB_NAME = 'bd_hosp'
 
-# SQLALCHEMY_DATABASE_URL = "sqlite:///./sql_app.db"
+SQLALCHEMY_DATABASE_URL = "sqlite:///./sql_app.db"
 # SQLALCHEMY_DATABASE_URL = "postgresql://user:password@postgresserver/db"
-SQLALCHEMY_DATABASE_URL = "mysql+pymysql://{}:{}@localhost/{}".format(USER, PASSWORD, DB_NAME) #Se arma la url para la bd
+# SQLALCHEMY_DATABASE_URL = "mysql+pymysql://{}:{}@localhost/{}".format(USER, PASSWORD, DB_NAME) #Se arma la url para la bd
 
 
 engine = create_engine(SQLALCHEMY_DATABASE_URL)
